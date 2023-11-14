@@ -1,0 +1,489 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: Master.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Master.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Master"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : Master
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/kwesi/Desktop/VHDL_proj/SPI_master_slave/Master.vhd" into library work
+Parsing entity <Master>.
+INFO:HDLCompiler:1676 - "/home/kwesi/Desktop/VHDL_proj/SPI_master_slave/Master.vhd" Line 43. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+INFO:HDLCompiler:1676 - "/home/kwesi/Desktop/VHDL_proj/SPI_master_slave/Master.vhd" Line 46. declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output
+Parsing architecture <Behavioral> of entity <master>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Master> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "/home/kwesi/Desktop/VHDL_proj/SPI_master_slave/Master.vhd" Line 101: nextstate should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Master>.
+    Related source file is "/home/kwesi/Desktop/VHDL_proj/SPI_master_slave/Master.vhd".
+WARNING:Xst:647 - Input <dataIn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 3-bit register for signal <clkCounter>.
+    Found 8-bit register for signal <ShiftRegister>.
+    Found 1-bit register for signal <mosi>.
+    Found 1-bit register for signal <NextState>.
+    Found 1-bit register for signal <sclk>.
+    Found 8-bit register for signal <RXData>.
+    Found 3-bit adder for signal <clkCounter[2]_GND_5_o_add_1_OUT> created at line 76.
+    Found 3-bit comparator greater for signal <clkCounter[2]_GND_5_o_LessThan_1_o> created at line 75
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <Master> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 3-bit adder                                           : 1
+# Registers                                            : 6
+ 1-bit register                                        : 3
+ 3-bit register                                        : 1
+ 8-bit register                                        : 2
+# Comparators                                          : 1
+ 3-bit comparator greater                              : 1
+# Multiplexers                                         : 2
+ 3-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <ShiftRegister_0> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_1> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_2> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_3> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_4> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_5> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_6> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_7> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mosi> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <Master>.
+The following registers are absorbed into counter <clkCounter>: 1 register on signal <clkCounter>.
+Unit <Master> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 19
+ Flip-Flops                                            : 19
+# Comparators                                          : 1
+ 3-bit comparator greater                              : 1
+# Multiplexers                                         : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <ShiftRegister_0> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_1> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_2> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_3> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_4> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_5> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_6> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ShiftRegister_7> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mosi> (without init value) has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Master> ...
+WARNING:Xst:1293 - FF/Latch <clkCounter_2> has a constant value of 0 in block <Master>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Master, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Master.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 16
+#      GND                         : 1
+#      INV                         : 3
+#      LUT2                        : 2
+#      LUT3                        : 9
+#      VCC                         : 1
+# FlipFlops/Latches                : 12
+#      FDCE                        : 4
+#      FDE_1                       : 8
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 15
+#      IBUF                        : 3
+#      OBUF                        : 12
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              12  out of  126800     0%  
+ Number of Slice LUTs:                   14  out of  63400     0%  
+    Number used as Logic:                14  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     15
+   Number with an unused Flip Flop:       3  out of     15    20%  
+   Number with an unused LUT:             1  out of     15     6%  
+   Number of fully used LUT-FF pairs:    11  out of     15    73%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                          24
+ Number of bonded IOBs:                  16  out of    210     7%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 4     |
+sclk_OBUF                          | NONE(RXData_0)         | 8     |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 1.438ns (Maximum Frequency: 695.604MHz)
+   Minimum input arrival time before clock: 1.120ns
+   Maximum output required time after clock: 1.093ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 1.438ns (frequency: 695.604MHz)
+  Total number of paths / destination ports: 10 / 7
+-------------------------------------------------------------------------
+Delay:               1.438ns (Levels of Logic = 1)
+  Source:            NextState (FF)
+  Destination:       sclk (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: NextState to sclk
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            13   0.361   0.351  NextState (NextState)
+     LUT2:I1->O            1   0.097   0.279  rst_sclken_OR_1_o1 (rst_sclken_OR_1_o)
+     FDCE:CLR                  0.349          sclk
+    ----------------------------------------
+    Total                      1.438ns (0.807ns logic, 0.631ns route)
+                                       (56.1% logic, 43.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sclk_OBUF'
+  Clock period: 0.858ns (frequency: 1165.365MHz)
+  Total number of paths / destination ports: 15 / 8
+-------------------------------------------------------------------------
+Delay:               0.858ns (Levels of Logic = 1)
+  Source:            RXData_0 (FF)
+  Destination:       RXData_1 (FF)
+  Source Clock:      sclk_OBUF falling
+  Destination Clock: sclk_OBUF falling
+
+  Data Path: RXData_0 to RXData_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            3   0.364   0.389  RXData_0 (RXData_0)
+     LUT3:I1->O            1   0.097   0.000  Mmux__n005921 (_n0059<1>)
+     FDE_1:D                   0.008          RXData_1
+    ----------------------------------------
+    Total                      0.858ns (0.469ns logic, 0.389ns route)
+                                       (54.7% logic, 45.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              1.120ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       sclk (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to sclk
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.001   0.393  rst_IBUF (rst_IBUF)
+     LUT2:I0->O            1   0.097   0.279  rst_sclken_OR_1_o1 (rst_sclken_OR_1_o)
+     FDCE:CLR                  0.349          sclk
+    ----------------------------------------
+    Total                      1.120ns (0.447ns logic, 0.673ns route)
+                                       (39.9% logic, 60.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sclk_OBUF'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.485ns (Levels of Logic = 2)
+  Source:            miso (PAD)
+  Destination:       RXData_0 (FF)
+  Destination Clock: sclk_OBUF falling
+
+  Data Path: miso to RXData_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.379  miso_IBUF (miso_IBUF)
+     LUT3:I1->O            1   0.097   0.000  Mmux__n005911 (_n0059<0>)
+     FDE_1:D                   0.008          RXData_0
+    ----------------------------------------
+    Total                      0.485ns (0.106ns logic, 0.379ns route)
+                                       (21.8% logic, 78.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sclk_OBUF'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              0.653ns (Levels of Logic = 1)
+  Source:            RXData_6 (FF)
+  Destination:       RXData<6> (PAD)
+  Source Clock:      sclk_OBUF falling
+
+  Data Path: RXData_6 to RXData<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            3   0.364   0.289  RXData_6 (RXData_6)
+     OBUF:I->O                 0.000          RXData_6_OBUF (RXData<6>)
+    ----------------------------------------
+    Total                      0.653ns (0.364ns logic, 0.289ns route)
+                                       (55.7% logic, 44.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              1.093ns (Levels of Logic = 2)
+  Source:            NextState (FF)
+  Destination:       ready (PAD)
+  Source Clock:      clk rising
+
+  Data Path: NextState to ready
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            13   0.361   0.335  NextState (NextState)
+     INV:I->O              2   0.113   0.283  NextState_inv1_INV_0 (NextState_inv)
+     OBUF:I->O                 0.000          ready_OBUF (ready)
+    ----------------------------------------
+    Total                      1.093ns (0.474ns logic, 0.619ns route)
+                                       (43.4% logic, 56.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.438|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sclk_OBUF
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    1.056|         |
+sclk_OBUF      |         |         |    0.858|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.91 secs
+ 
+--> 
+
+
+Total memory usage is 496112 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   21 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

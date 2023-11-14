@@ -1,0 +1,72 @@
+ISim log file
+Running: /home/kwesi/Desktop/VHDL_proj/SPI_master_slave/Master_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/kwesi/Desktop/VHDL_proj/SPI_master_slave/Master_tb_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 4 ns: Note: for loop (/master_tb/).
+at 6500 ps(2): Note: for loop (/master_tb/).
+at 6500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 6500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 14500 ps(2): Note: for loop (/master_tb/).
+at 14500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 14500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 22500 ps(2): Note: for loop (/master_tb/).
+at 22500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 22500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 30500 ps(2): Note: for loop (/master_tb/).
+at 30500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 30500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 38500 ps(2): Note: for loop (/master_tb/).
+at 38500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 38500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 46500 ps(2): Note: for loop (/master_tb/).
+at 46500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 46500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 54500 ps(2): Note: for loop (/master_tb/).
+at 54500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 54500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 62500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 62500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 70500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+# restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 4 ns: Note: for loop (/master_tb/).
+at 6500 ps(2): Note: for loop (/master_tb/).
+at 6500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 6500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 14500 ps(2): Note: for loop (/master_tb/).
+at 14500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 14500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 22500 ps(2): Note: for loop (/master_tb/).
+at 22500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 22500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 30500 ps(2): Note: for loop (/master_tb/).
+at 30500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 30500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 38500 ps(2): Note: for loop (/master_tb/).
+at 38500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 38500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 46500 ps(2): Note: for loop (/master_tb/).
+at 46500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 46500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 54500 ps(2): Note: for loop (/master_tb/).
+at 54500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 54500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 62500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+at 62500 ps(2): Note: Transferring byte (/master_tb/DUT/).
+at 70500 ps(2): Note: sclk enabled (/master_tb/DUT/).
+# restart
+# run 1.00ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 1.00ns
+# run 1.00ns
+# run 1.00ns
+at 4 ns: Note: for loop (/master_tb/).

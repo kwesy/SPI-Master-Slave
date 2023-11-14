@@ -1,0 +1,2 @@
+vhdl isim_temp "Master.vhd"
+vhdl isim_temp "Master_TB.vhd"
