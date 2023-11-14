@@ -4,7 +4,7 @@ The SPI protocol is a bidirectional serial communication protocol that involve a
 
 There are four 4 pins required to setup the connection.
 
-| Pins                                               | Descriptio                                    |
+| Pins                                               | Description                                    |
 | -------------------------------------------------- | ---------------------------------------------- |
 | MOSI                                               | Master sends data on this pin to slave         |
 | MISO                                               | Slave sends data on this pin to master         |
@@ -32,7 +32,4 @@ Data can be read on falling or rising edge of the clock signal (SCLK). There are
 |    3     |   1   |   1   |
 
 
-
-
-
-# SPI-Master-Slave
+![SPI Master and Slave Relationship](spimodes.png)
